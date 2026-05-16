@@ -1,0 +1,49 @@
+﻿@model List<Employee>
+
+<h1 style="color:green; text-align:center;">
+    All Employees
+</h1>
+
+<br />
+<hr />
+<br />
+
+<dev style="text-align:center;">
+    <a class="btn btn-outline-success" href="~/Employee/Create">
+        Create New Employee
+    </a>
+</dev>
+
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td scope="row">@item.Name</td>
+                <td scope="row">@item.Age</td>
+                <td scope="row">@item.Salary</td>
+                <td scope="row">
+                    <a class="btn btn-outline-primary" href="~/Employee/GetById/@item.Id">
+                        Details
+                    </a>
+                    <a class="btn btn-outline-secondary" href="~/Employee/Edit/@item.Id">
+                        Edit
+                    </a>
+                    <a class="btn btn-outline-danger" href="~/Employee/Delete/@item.Id">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

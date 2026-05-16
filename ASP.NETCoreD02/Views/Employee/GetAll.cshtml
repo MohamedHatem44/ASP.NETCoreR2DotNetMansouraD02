@@ -1,0 +1,54 @@
+﻿@model List<Employee>
+@{
+    string pageTitle = ViewData["PageTitle"] as string;
+    string pageTitle1 = ViewData[Constant.PageTitle] as string;
+    string pageTitle2 = ViewBag.PageTitle2;
+}
+
+<h1 style="color:green; text-align:center;">
+    All Employees
+</h1>
+
+<h1 style="color:blue; text-align:center;">
+    @pageTitle
+</h1>
+
+<h1 style="color:red; text-align:center;">
+    @pageTitle1
+</h1>
+
+<h1 style="color:yellowgreen; text-align:center;">
+    @pageTitle2
+</h1>
+
+<br />
+<hr />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td scope="row">@item.Name</td>
+                <td scope="row">@item.Age</td>
+                <td scope="row">@item.Salary</td>
+                <td scope="row">
+                    <a class="btn btn-outline-primary" href="~/Employee/GetById/@item.Id">
+                        View Details
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

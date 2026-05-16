@@ -1,0 +1,16 @@
+﻿@model EmployeeReadVM
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Employee Name: @Model.Name</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Employee Id: @Model.Id</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Employee Age: @Model.Age</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Employee Salary: @Model.Salary</h6>
+        <h6 class="card-subtitle mb-2 text-muted">@Model.PageTitle1</h6>
+        <h6 class="card-subtitle mb-2 text-muted">@Model.PageTitle2</h6>
+        <h6 class="card-subtitle mb-2 text-muted">@Model.PageTitle3</h6>
+        <a class="btn btn-outline-secondary" href="~/Employee/GetAll">
+            Back
+        </a>
+    </div>
+</div>
